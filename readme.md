@@ -38,3 +38,10 @@ Then, to start your REPL in a container, run
 ```shell
 docker compose run jumip
 ```
+
+If changes have been made to the `Project.toml`, you may need to force rebuild with
+
+```shell
+docker compose up --build jumip
+docker compose run jumip
+```

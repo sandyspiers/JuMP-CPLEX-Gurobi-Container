@@ -57,6 +57,8 @@ ARG PROJ_DIR
 COPY Manifest.toml ${PROJ_DIR}/Manifest.toml
 COPY Project.toml ${PROJ_DIR}/Project.toml
 
+COPY startup.jl /root/.julia/config/startup.jl
+
 ENV JULIA_PROJECT=${PROJ_DIR}
 RUN julia -e 'using Pkg; Pkg.instantiate()'
 RUN julia -e 'using Pkg; Pkg.status()'
