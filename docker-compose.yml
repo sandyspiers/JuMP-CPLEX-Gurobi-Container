@@ -1,0 +1,11 @@
+services:
+  jumip:
+    container_name: jumip
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PROJ_DIR: /proj
+    volumes:
+      - ./:/proj/
+      - C:/gurobi/gurobi.lic:/opt/gurobi/gurobi.lic:ro
